@@ -1,8 +1,5 @@
 <script>
   export let segment;
-  import { onMount } from "svelte";
-
-  onMount(() => {});
 </script>
 
 <style>

@@ -1,14 +1,15 @@
 <script>
-  import { goto } from "@sapper/app";
+  import { goto , stores} from "@sapper/app";
   import { onMount } from "svelte";
   import gifsStore from "../stores/gifs";
   import fetchGifs from "../services/fetchGifs";
   import { getValueFromQuerySearchParams } from "../utils";
+  const { page } = stores();
 
   let searchValue = "";
 
   onMount(() => {
-    searchValue = getValueFromQuerySearchParams(location.search);
+    searchValue = $page.query.q;
     handleSubmit(searchValue);
   });
 
@@ -17,9 +18,9 @@
 
     if (!value) return;
     try {
-      const searchURLValue = getValueFromQuerySearchParams(location.search);
+      const searchURLValue = $page.query.q;
       if (searchURLValue !== value) {
-        goto(`/search?q=${value}`);
+        goto(`./search?q=${value}`);
       }
       const gifs = await fetchGifs(value);
       const formattedGifs = await gifs.json();

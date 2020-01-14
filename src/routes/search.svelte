@@ -1,9 +1,6 @@
 <script>
   import storedGifs from "../stores/gifs";
   import Grid from "../components/Grid.svelte";
-  import {onMount} from "svelte"
-
-
 </script>
 
 <style>
