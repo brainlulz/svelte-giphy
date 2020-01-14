@@ -9,7 +9,7 @@
   let searchValue = "";
 
   onMount(() => {
-    searchValue = $page.query.q;
+    searchValue = $page.query.search;
     handleSubmit(searchValue);
   });
 
@@ -18,9 +18,9 @@
 
     if (!value) return;
     try {
-      const searchURLValue = $page.query.q;
+      const searchURLValue = $page.query.search;
       if (searchURLValue !== value) {
-        goto(`./search?q=${value}`);
+        goto(`.?search=${value}`);
       }
       const gifs = await fetchGifs(value);
       const formattedGifs = await gifs.json();

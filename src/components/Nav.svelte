@@ -36,7 +36,7 @@
         class="navigationLink"
         rel="prefetch"
         class:selected={segment === 'favorited'}
-        href="favorited/">
+        href="./favorited">
         Favorited
       </a>
     </li>

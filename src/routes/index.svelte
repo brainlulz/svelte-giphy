@@ -1,4 +1,5 @@
 <script>
+  import storedGifs from "../stores/gifs";
   import Grid from "../components/Grid.svelte";
 </script>
 
@@ -22,5 +23,9 @@
 </svelte:head>
 
 <div class="wrapper">
-  <h1>Gif or Gif ?</h1>
+  {#if $storedGifs && $storedGifs.data && $storedGifs.data.length > 0}
+    <Grid gifs={$storedGifs.data} />
+  {:else}
+    <p>Search a term</p>
+  {/if}
 </div>
