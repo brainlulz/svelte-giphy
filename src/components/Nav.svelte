@@ -27,7 +27,7 @@
 <nav class="navBar">
   <ul class="list">
     <li>
-      <a class="navigationLink" class:selected={segment === undefined} href=".">
+      <a class="navigationLink" class:selected={segment === undefined} href="./">
         Home
       </a>
     </li>
@@ -36,7 +36,7 @@
         class="navigationLink"
         rel="prefetch"
         class:selected={segment === 'favorited'}
-        href="favorited">
+        href="favorited/">
         Favorited
       </a>
     </li>
